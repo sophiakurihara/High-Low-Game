@@ -7,13 +7,13 @@
  
 		fwrite(STDOUT, "Guess a number between 1 and 100:" . PHP_EOL);
 
-	} elseif($argc == 3) {
+	} elseif($argc == 3 && is_numeric($argv[1]) && is_numeric($argv[2])) {
 	
 		$random = mt_rand($argv[1], $argv[2]);
  
 		fwrite(STDOUT, "Guess a number between {$argv[1]} and {$argv[2]}" . PHP_EOL);
 	} else {
-		fwrite(STDOUT, "Please enter only 2 arguments" . PHP_EOL);
+		fwrite(STDOUT, "Please enter only 2 integers as arguments." . PHP_EOL);
 		exit(0);
 	}
 
