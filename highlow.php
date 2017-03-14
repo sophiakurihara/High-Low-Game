@@ -1,8 +1,15 @@
 <?php
 
-$random = mt_rand(1, 100);
+if(!is_numeric($argv[1]) || !is_numeric($argv[2])) {
+	$random = mt_rand(1, 100);
  
-fwrite(STDOUT, 'Guess a number between 1 and 100' . PHP_EOL);
+	fwrite(STDOUT, "Guess a number between 1 and 100:" . PHP_EOL);
+
+} else {
+	$random = mt_rand($argv[1], $argv[2]);
+ 
+	fwrite(STDOUT, "Guess a number between {$argv[1]} and {$argv[2]}" . PHP_EOL);
+}
 
 $user_guess = trim(fgets(STDIN));
 
@@ -17,3 +24,4 @@ do {
 } while ($user_guess != $random);
 
 echo "GOOD GUESS!" . PHP_EOL;
+exit(0);
