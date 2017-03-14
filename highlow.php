@@ -6,6 +6,8 @@ if(!is_numeric($argv[1]) || !is_numeric($argv[2])) {
 	fwrite(STDOUT, "Guess a number between 1 and 100:" . PHP_EOL);
 
 } else {
+	fwrite(STDOUT, "If you would like to set the min & max, please enter 2 valid integers as arguments");
+	
 	$random = mt_rand($argv[1], $argv[2]);
  
 	fwrite(STDOUT, "Guess a number between {$argv[1]} and {$argv[2]}" . PHP_EOL);
